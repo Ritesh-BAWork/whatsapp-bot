@@ -54,9 +54,6 @@ def extract_message_text(message, msg_type):
         return message.get("button", {}).get("text", "[Button]")
     return f"[{msg_type}]"
 
-def parse_order_fields(text):
-    return {"item": "", "qty": "", "note": ""}
-
 @app.get("/")
 def verify():
     mode = request.args.get("hub.mode")
@@ -106,7 +103,6 @@ def webhook():
             wa_id = msg.get("from", "")
             msg_type = msg.get("type", "unknown")
             msg_text = extract_message_text(msg, msg_type)
-            parsed = parse_order_fields(msg_text)
 
             client_name = "Unknown"
             for c in contacts:
@@ -122,9 +118,9 @@ def webhook():
                 wa_id,
                 msg_type,
                 msg_text,
-                parsed["item"],
-                parsed["qty"],
-                parsed["note"],
+                "",
+                "",
+                "",
                 msg_id,
                 json.dumps(msg, ensure_ascii=False)
             ])
