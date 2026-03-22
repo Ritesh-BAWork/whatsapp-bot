@@ -23,6 +23,10 @@ def get_sheet():
 def home():
     return "WhatsApp Bot is running!", 200
 
+@app.route("/health", methods=["GET"])
+def health():
+    return "OK", 200
+
 @app.route("/webhook", methods=["GET"])
 def verify():
     mode = request.args.get("hub.mode")
@@ -46,3 +50,4 @@ def webhook():
     except Exception as e:
         print("Error:", e)
     return "OK", 200
+```
