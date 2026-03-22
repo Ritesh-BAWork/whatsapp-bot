@@ -46,15 +46,3 @@ def webhook():
     except Exception as e:
         print("Error:", e)
     return "OK", 200
-```
-
-Commit करा ✅
-
----
-
-## `requirements.txt` पण update करा 👇
-```
-flask
-gunicorn
-gspread
-google-auth
