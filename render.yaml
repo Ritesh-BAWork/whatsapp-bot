@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: whatsapp-webhook
+    name: whatsapp-bot-1
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
