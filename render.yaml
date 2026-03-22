@@ -1,4 +1,6 @@
-flask
-gunicorn
-gspread
-google-auth
+services:
+  - type: web
+    name: whatsapp-bot-1
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
