@@ -23,3 +23,18 @@ def webhook():
     data = request.get_json()
     print("Incoming:", data)
     return "OK", 200
+```
+
+Commit करा ✅
+
+---
+
+### FIX 3 — Render वर Manual Deploy करा
+
+**Manual Deploy** → **"Clear build cache & deploy"** click करा
+
+---
+
+Logs मध्ये हे दिसेपर्यंत wait करा:
+```
+==> Your service is live 🎉
